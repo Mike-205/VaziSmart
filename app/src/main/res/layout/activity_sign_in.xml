@@ -8,6 +8,16 @@
     android:background="@color/background"
     tools:context=".Activity.SignInActivity">
 
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/scrollView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/top_background" />
+
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
@@ -124,7 +134,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
                         android:layout_marginEnd="8dp"
-                        android:text="Or Continue With" />
+                        android:text="Or Continue With"
+                        android:textColor="@color/light_grey"/>
 
                     <View
                         android:id="@+id/view2"
@@ -148,8 +159,8 @@
                         android:layout_width="50dp"
                         android:layout_height="50dp"
                         android:layout_weight="1"
-                        android:paddingTop="10dp"
-                        android:paddingBottom="10dp"
+                        android:paddingTop="11dp"
+                        android:paddingBottom="11dp"
                         android:layout_marginEnd="16dp"
                         android:background="@drawable/auth_account_holder_bg"
                         app:srcCompat="@drawable/facebook" />
@@ -159,8 +170,8 @@
                         android:layout_width="50dp"
                         android:layout_height="50dp"
                         android:layout_weight="1"
-                        android:paddingTop="9dp"
-                        android:paddingBottom="9dp"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="5dp"
                         android:background="@drawable/auth_account_holder_bg"
                         app:srcCompat="@drawable/google_logo" />
                 </LinearLayout>
@@ -171,6 +182,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
                     android:text="Forgot password?"
+                    android:textSize="15sp"
                     android:textColor="@color/blue"
                     android:textAlignment="center"/>
 
@@ -179,6 +191,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Login"
+                    android:layout_marginTop="16dp"
                     android:layout_marginStart="32dp"
                     android:layout_marginEnd="32dp"
                     android:background="@drawable/button_bg"/>
@@ -188,6 +201,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textAlignment="center"
+                    android:textColor="@color/blue"
+                    android:textSize="15sp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="16dp"
                     android:text="Don\'t Have an Account? Sign Up" />
 
             </LinearLayout>
