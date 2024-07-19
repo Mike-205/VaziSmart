@@ -11,6 +11,6 @@
     <color name="blue">#FF434D94</color>
     <color name="maroon">#FFa22f4e</color>
     <color name="light_grey">#FFD3D3D3</color>
-    <color name="maroon_with_A_hint">#FF9b2323</color>
+    <color name="maroon_with_A_hint">#FFfc7972</color>
     <color name="transparent">#00FFFFFF</color>
 </resources>
