@@ -11,23 +11,33 @@ public class AuthException extends Exception {
         super(DEFAULT_MESSAGE);
     }
 
+    private static String processErrorCode(String code) {
+        System.out.println("Raw error code: " + code);
+        if (code.startsWith("ERROR_")) {
+            code = code.substring(6);
+        }
+        String processedCode = code.toLowerCase();
+        System.out.println("processed error code: " + processedCode);
+        return code.toLowerCase();
+    }
+
     public static AuthException fromCode(String code) {
-        switch (code) {
-            case "invalid-email":
+        switch (processErrorCode(code)) {
+            case "invalid_email":
                 return new AuthException("Invalid email. Please check email format.");
-            case "user-disabled":
+            case "user_disabled":
                 return new AuthException("This user has been disabled. Please contact support for help.");
-            case "user-not-found":
+            case "user_not_found":
                 return new AuthException("Email not found! Please create an account.");
-            case "invalid-credential":
+            case "invalid_credential":
                 return new AuthException("Invalid email or password.");
-            case "too-many-requests":
+            case "too_many_requests":
                 return new AuthException("Too many requests. Please try again later.");
-            case "email-already-in-use":
+            case "email_already_in_use":
                 return  new AuthException("An account already exists for that email.");
-            case "operation-not-allowed":
+            case "operation_not_allowed":
                 return new AuthException("This operation is not allowed. Please contact support for help.");
-            case "weak-password":
+            case "weak_password":
                 return new AuthException("Please enter a stronger password.");
             default:
                 return new AuthException();

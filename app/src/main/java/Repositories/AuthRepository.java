@@ -37,7 +37,7 @@ public class AuthRepository {
                     } else {
                         String errorCode = ((FirebaseAuthException) Objects.requireNonNull(task.getException())).getErrorCode();
                         userLiveData.postValue(null);
-                        authExceptionLiveData.postValue(new AuthException(errorCode));
+                        authExceptionLiveData.postValue(AuthException.fromCode(errorCode));
                     }
                 });
     }
@@ -50,7 +50,7 @@ public class AuthRepository {
                     } else {
                         String errorCode = ((FirebaseAuthException) Objects.requireNonNull(task.getException())).getErrorCode();
                         userLiveData.postValue(null);
-                        authExceptionLiveData.postValue(new AuthException(errorCode));
+                        authExceptionLiveData.postValue(AuthException.fromCode(errorCode));
                     }
                 });
     }
