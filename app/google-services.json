@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "208622933028",
+    "project_id": "vazismart-bc86b",
+    "storage_bucket": "vazismart-bc86b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:208622933028:android:fdb4445dd248ff2826b4b1",
+        "android_client_info": {
+          "package_name": "com.example.vazismart"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "208622933028-j08o5fqkefmnt7frsqodgq21oi9g71k6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCC4qEJG9wXnhToKbQFaSK4o27qDd9jBuE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "208622933028-j08o5fqkefmnt7frsqodgq21oi9g71k6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

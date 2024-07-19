@@ -8,10 +8,10 @@
             <InsightsFilterSettings>
               <option name="connection">
                 <ConnectionSetting>
-                  <option name="appId" value="PLACEHOLDER" />
-                  <option name="mobileSdkAppId" value="" />
-                  <option name="projectId" value="" />
-                  <option name="projectNumber" value="" />
+                  <option name="appId" value="com.example.vazismart" />
+                  <option name="mobileSdkAppId" value="1:208622933028:android:fdb4445dd248ff2826b4b1" />
+                  <option name="projectId" value="vazismart-bc86b" />
+                  <option name="projectNumber" value="208622933028" />
                 </ConnectionSetting>
               </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />

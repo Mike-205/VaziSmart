@@ -1,4 +1,4 @@
-package com.example.vazismart.Activity;
+package Activities;
 
 import android.content.Intent;
 import android.os.Bundle;
