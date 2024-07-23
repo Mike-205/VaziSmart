@@ -1,24 +1,23 @@
 package Activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.vazismart.R;
-import com.google.firebase.auth.FirebaseUser;
 
 import javax.annotation.Nullable;
 
-import Utils.AuthException;
 import ViewModels.AuthViewModel;
 
 public class SignInActivity extends AppCompatActivity {
@@ -38,14 +37,13 @@ public class SignInActivity extends AppCompatActivity {
 
         emailTextController = findViewById(R.id.emailTextField);
         passwordTextController = findViewById(R.id.PasswordTextField);
-        Button signInBtn = findViewById(R.id.loginButton);
         circularProgressIndicator = findViewById(R.id.progressBar);
+        Button signInBtn = findViewById(R.id.loginButton);
+        TextView signUpLink = findViewById(R.id.signUpLink);
 
         authViewModel = new ViewModelProvider(this).get(AuthViewModel.class);
 
-
         signInBtn.setOnClickListener(v -> signIn());
-
 
         authViewModel.getUserLiveData().observe(this, firebaseUser -> {
             if (firebaseUser != null) {
@@ -55,7 +53,6 @@ public class SignInActivity extends AppCompatActivity {
             }
         });
 
-
         authViewModel.getAuthExceptionLiveData().observe(this, authException -> {
             if (authException != null) {
                 circularProgressIndicator.setVisibility(View.GONE);
@@ -63,6 +60,7 @@ public class SignInActivity extends AppCompatActivity {
             }
         });
 
+        signUpLink.setOnClickListener(view -> navigateToSignUp());
     }
 
     private void signIn() {
@@ -78,8 +76,13 @@ public class SignInActivity extends AppCompatActivity {
             passwordTextController.setError("Password is required");
             return;
         }
-
         circularProgressIndicator.setVisibility(View.VISIBLE);
         authViewModel.loginWithEmailAndPassword(email, password);
+    }
+
+    private void navigateToSignUp() {
+        Intent signUpActivity = new Intent(SignInActivity.this, SignUpActivity.class);
+        startActivity(signUpActivity);
+        finish();
     }
 }

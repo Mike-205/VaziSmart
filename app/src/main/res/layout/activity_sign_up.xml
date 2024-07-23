@@ -67,7 +67,7 @@
                     android:textSize="18sp" />
 
                 <EditText
-                    android:id="@+id/editTextText"
+                    android:id="@+id/emailEditText"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_marginStart="28dp"
@@ -93,7 +93,7 @@
                     android:textSize="18sp" />
 
                 <EditText
-                    android:id="@+id/editTextText1"
+                    android:id="@+id/passwordEditText"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_marginStart="28dp"
@@ -119,7 +119,7 @@
                     android:textSize="18sp" />
 
                 <EditText
-                    android:id="@+id/editTextText2"
+                    android:id="@+id/confirmPasswordEditText"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_marginStart="28dp"
@@ -175,7 +175,7 @@
                     android:orientation="horizontal">
 
                     <ImageView
-                        android:id="@+id/imageView4"
+                        android:id="@+id/facebook"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
                         android:layout_weight="1"
@@ -186,7 +186,7 @@
                         app:srcCompat="@drawable/facebook" />
 
                     <ImageView
-                        android:id="@+id/imageView5"
+                        android:id="@+id/google"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
                         android:layout_weight="1"
@@ -197,7 +197,7 @@
                 </LinearLayout>
 
                 <Button
-                    android:id="@+id/button"
+                    android:id="@+id/signUpbtn"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Sign Up"
@@ -208,7 +208,7 @@
                     android:background="@drawable/button_bg"/>
 
                 <TextView
-                    android:id="@+id/textView8"
+                    android:id="@+id/signInLink"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textAlignment="center"
@@ -222,7 +222,7 @@
     </ScrollView>
 
     <ProgressBar
-        android:id="@+id/progressBar4"
+        android:id="@+id/progressBar"
         style="?android:attr/progressBarStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
