@@ -1,27 +1,27 @@
 package ViewModels;
 
+import android.content.Intent;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.ViewModel;
-
-import com.google.firebase.auth.FirebaseUser;
-
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import Repositories.AuthRepository;
+import com.google.firebase.auth.FirebaseUser;
 import Utils.AuthException;
 
 public class AuthViewModel extends ViewModel {
     private final AuthRepository authRepository;
-    private final LiveData<FirebaseUser> userLiveData;
-    private final LiveData<Boolean> loggedOutLiveData;
-    private final LiveData<AuthException> authExceptionLiveData;
 
-    public AuthViewModel() {
-        authRepository = new AuthRepository();
-        userLiveData = authRepository.getUserLiveData();
-        loggedOutLiveData = authRepository.getLoggedOutLiveData();
-        authExceptionLiveData = authRepository.getAuthErrorLiveData();
+    public AuthViewModel(GoogleSignInClient googleSignInClient) {
+        authRepository = new AuthRepository(googleSignInClient);
     }
 
-    public void loginWithEmailAndPassword(String email, String password) {
+    public void signInWithGoogle(Intent data) {
+        authRepository.signInWithGoogle(data, credential -> {
+            // Handle credential if needed
+        });
+    }
+
+    public void signInWithEmailAndPassword(String email, String password) {
         authRepository.loginWithEmailAndPassword(email, password);
     }
 
@@ -29,19 +29,19 @@ public class AuthViewModel extends ViewModel {
         authRepository.signUpWithEmailAndPassword(email, password);
     }
 
-    public void signOut() {
+    public void logOut() {
         authRepository.logOut();
     }
 
     public LiveData<FirebaseUser> getUserLiveData() {
-        return userLiveData;
+        return authRepository.getUserLiveData();
     }
 
     public LiveData<Boolean> getLoggedOutLiveData() {
-        return loggedOutLiveData;
+        return authRepository.getLoggedOutLiveData();
     }
 
-    public LiveData<AuthException> getAuthExceptionLiveData() {
-        return authExceptionLiveData;
+    public LiveData<AuthException> getAuthErrorLiveData() {
+        return authRepository.getAuthErrorLiveData();
     }
 }
