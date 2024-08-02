@@ -13,6 +13,9 @@
         android:theme="@style/Theme.VaziSmart"
         tools:targetApi="31">
         <activity
+            android:name="Activities.HomeActivity"
+            android:exported="false" />
+        <activity
             android:name="Activities.SignUpActivity"
             android:exported="true" />
         <activity

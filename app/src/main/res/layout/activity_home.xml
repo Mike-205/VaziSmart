@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context="Activities.HomeActivity">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="12dp"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/searchBar"
+                android:layout_width="wrap_content"
+                android:layout_height="55dp"
+                android:layout_marginEnd="15dp"
+                android:layout_weight="1"
+                android:background="@drawable/search_bar_background"
+                android:drawableStart="@drawable/search_icon"
+                android:drawablePadding="10dp"
+                android:ems="10"
+                android:hint="Search anything"
+                android:inputType="text"
+                android:padding="10dp"
+                android:textColorHint="@color/light_grey" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/bellConstraint"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:background="@drawable/notification_bell_bg">
+
+                <ImageView
+                    android:id="@+id/notificationBell"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="@id/bellConstraint"
+                    app:layout_constraintEnd_toEndOf="@id/bellConstraint"
+                    app:layout_constraintStart_toStartOf="@id/bellConstraint"
+                    app:layout_constraintTop_toTopOf="@id/bellConstraint"
+                    app:srcCompat="@drawable/bell" />
+
+                <ImageView
+                    android:id="@+id/notificationHolder"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toTopOf="@id/notificationBell"
+                    app:layout_constraintEnd_toEndOf="@+id/notificationBell"
+                    app:layout_constraintStart_toEndOf="@+id/notificationBell"
+                    app:layout_constraintTop_toTopOf="@+id/notificationBell"
+                    app:srcCompat="@drawable/red_circle" />
+
+                <TextView
+                    android:id="@+id/noOfNotifications"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="@id/notificationHolder"
+                    app:layout_constraintEnd_toEndOf="@+id/notificationHolder"
+                    app:layout_constraintStart_toStartOf="@+id/notificationHolder"
+                    app:layout_constraintTop_toTopOf="@id/notificationHolder" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:paddingTop="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/linearLayout">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginBottom="18dp">
+
+                <ProgressBar
+                    android:id="@+id/sliderProgressBar"
+                    style="?android:attr/progressBarStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="invisible"
+                    android:indeterminateTint="@color/maroon_with_A_hint"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.viewpager2.widget.ViewPager2
+                    android:id="@+id/sliderViewPager"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/textView11"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Official Brands"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="18sp"/>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="10dp">
+
+                <ProgressBar
+                    android:id="@+id/brandProgressBar"
+                    style="?android:attr/progressBarStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:indeterminateTint="@color/maroon_with_A_hint"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/brandsRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="10dp">
+
+                <TextView
+                    android:id="@+id/textView12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:textColor="@color/black"
+                    android:text="Popular products" />
+
+                <TextView
+                    android:id="@+id/allPopularProducts"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/maroon_with_A_hint"
+                    android:text="See all" />
+            </LinearLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ProgressBar
+                    android:id="@+id/popularProgressBar"
+                    style="?android:attr/progressBarStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:indeterminateTint="@color/maroon_with_A_hint"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/productsRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_gravity="bottom"
+            android:background="@color/maroon_with_A_hint">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="0.25"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_gravity="center">
+
+                    <ImageView
+                        android:id="@+id/exploreNavBtn"
+                        android:layout_width="match_parent"
+                        android:layout_height="35dp"
+                        app:srcCompat="@drawable/Explore" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Explore"
+                        android:textSize="14sp"
+                        android:textColor="@color/white"
+                        android:textAlignment="center"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="0.25"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_gravity="center">
+
+                    <ImageView
+                        android:id="@+id/wishlistNavBtn"
+                        android:layout_width="match_parent"
+                        android:layout_height="35dp"
+                        app:srcCompat="@drawable/Wishlist" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Wishlist"
+                        android:textSize="14sp"
+                        android:textColor="@color/white"
+                        android:textAlignment="center"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="0.25"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_gravity="center">
+
+                    <ImageView
+                        android:id="@+id/cartNavBtn"
+                        android:layout_width="match_parent"
+                        android:layout_height="35dp"
+                        app:srcCompat="@drawable/Cart" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Cart"
+                        android:textSize="14sp"
+                        android:textColor="@color/white"
+                        android:textAlignment="center"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="0.25"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_gravity="center">
+
+                    <ImageView
+                        android:id="@+id/profileNavBtn"
+                        android:layout_width="match_parent"
+                        android:layout_height="35dp"
+                        app:srcCompat="@drawable/Profile" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Profile"
+                        android:textSize="14sp"
+                        android:textColor="@color/white"
+                        android:textAlignment="center"/>
+                </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.bottomnavigation.BottomNavigationView>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
