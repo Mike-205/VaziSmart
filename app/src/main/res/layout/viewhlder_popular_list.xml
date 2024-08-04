@@ -61,7 +61,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="$150"
-        android:paintFlags="strikeThruText|antiAlias"
         android:textColor="@color/darkGrey"
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"

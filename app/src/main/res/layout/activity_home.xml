@@ -245,7 +245,7 @@
                         android:id="@+id/exploreNavBtn"
                         android:layout_width="match_parent"
                         android:layout_height="35dp"
-                        app:srcCompat="@drawable/Explore" />
+                        app:srcCompat="@drawable/explore" />
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -266,7 +266,7 @@
                         android:id="@+id/wishlistNavBtn"
                         android:layout_width="match_parent"
                         android:layout_height="35dp"
-                        app:srcCompat="@drawable/Wishlist" />
+                        app:srcCompat="@drawable/wishlist" />
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -287,7 +287,7 @@
                         android:id="@+id/cartNavBtn"
                         android:layout_width="match_parent"
                         android:layout_height="35dp"
-                        app:srcCompat="@drawable/Cart" />
+                        app:srcCompat="@drawable/cart" />
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -308,7 +308,7 @@
                         android:id="@+id/profileNavBtn"
                         android:layout_width="match_parent"
                         android:layout_height="35dp"
-                        app:srcCompat="@drawable/Profile" />
+                        app:srcCompat="@drawable/profile" />
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
