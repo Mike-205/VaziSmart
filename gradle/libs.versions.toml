@@ -4,6 +4,10 @@ compiler = "4.15.1"
 firebaseAuth = "23.0.0"
 firebaseBom = "33.1.2"
 firebaseFirestore = "25.0.0"
+firebaseUiStorage = "8.0"
+firebaseUiStorageVersion = "8.0.0"
+glide = "4.16.0"
+glideVersion = "4.13.0"
 junit = "4.13.2"
 junitVersion = "1.2.1"
 espressoCore = "3.6.1"
@@ -19,7 +23,12 @@ firebase-analytics = { module = "com.google.firebase:firebase-analytics" }
 firebase-auth = { module = "com.google.firebase:firebase-auth", version.ref = "firebaseAuth" }
 firebase-bom = { module = "com.google.firebase:firebase-bom", version.ref = "firebaseBom" }
 firebase-firestore = { module = "com.google.firebase:firebase-firestore", version.ref = "firebaseFirestore" }
+firebase-storage = { module = "com.google.firebase:firebase-storage" }
+firebase-ui-storage = { module = "com.firebaseui:firebase-ui-storage", version.ref = "firebaseUiStorage" }
+firebase-ui-storage-v800 = { module = "com.firebaseui:firebase-ui-storage", version.ref = "firebaseUiStorageVersion" }
 glide = { module = "com.github.bumptech.glide:glide", version.ref = "compiler" }
+glide-v4130 = { module = "com.github.bumptech.glide:glide", version.ref = "glideVersion" }
+glide-v4160 = { module = "com.github.bumptech.glide:glide", version.ref = "glide" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }

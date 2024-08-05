@@ -34,12 +34,14 @@ android {
 }
 
 dependencies {
-    implementation (libs.glide)
-    annotationProcessor (libs.compiler)
+    implementation (libs.glide.v4160)
+    annotationProcessor (libs.glide.v4130)
     implementation (libs.play.services.auth)
     implementation(libs.firebase.analytics)
     implementation(platform(libs.firebase.bom))
     implementation (libs.firebase.auth)
+    implementation(libs.firebase.storage)
+    implementation(libs.firebase.ui.storage.v800)
     implementation (libs.firebase.firestore)
     implementation(libs.appcompat)
     implementation(libs.material)

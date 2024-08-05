@@ -1,15 +1,18 @@
 package models;
 
+import com.google.firebase.firestore.DocumentReference;
+
 public class Slider {
-    private String imageUrl;
+    private String path;
 
-    public Slider() {}
+    // Default constructor required for calls to DataSnapshot.getValue(Slider.class)
+    public Slider() { }
 
-    public Slider(String imageUrl) {
-        this.imageUrl = imageUrl;
+    public Slider(String path) {
+        this.path = path;
     }
 
-    public String getImageUrl() {
-        return imageUrl;
+    public String getPath() {
+        return path;
     }
 }

@@ -10,7 +10,6 @@ import androidx.viewpager2.widget.ViewPager2;
 import com.example.vazismart.R;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import Adapters.SliderAdapter;
 import ViewModels.SliderViewModel;
@@ -30,11 +29,7 @@ public class HomeActivity extends AppCompatActivity {
 
         SliderViewModel sliderViewModel = new ViewModelProvider(this).get(SliderViewModel.class);
         sliderViewModel.getSliderLiveData().observe(this, sliderList -> {
-            List<String> imageUrls = new ArrayList<>();
-            for (models.Slider slider : sliderList) {
-                imageUrls.add(slider.getImageUrl());
-            }
-            adapter.setImageUrls(imageUrls);
+            adapter.setSliders(sliderList);
         });
     }
 }
