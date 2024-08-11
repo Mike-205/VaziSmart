@@ -1,6 +1,7 @@
 package Activities;
 
 import android.os.Bundle;
+import android.widget.ProgressBar;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -24,7 +25,9 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
 
         ViewPager2 sliderViewPager = findViewById(R.id.sliderViewPager);
-        adapter = new SliderAdapter(this, new ArrayList<>());
+        ProgressBar sliderProgressBar = findViewById(R.id.sliderProgressBar);
+
+        adapter = new SliderAdapter(this, new ArrayList<>(), sliderProgressBar);
         sliderViewPager.setAdapter(adapter);
 
         SliderViewModel sliderViewModel = new ViewModelProvider(this).get(SliderViewModel.class);

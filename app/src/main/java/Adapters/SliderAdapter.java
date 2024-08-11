@@ -5,15 +5,13 @@ import android.content.Context;
 import android.util.Log;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-
-import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.request.RequestOptions;
-import com.example.vazismart.R;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
@@ -25,10 +23,12 @@ public class SliderAdapter extends RecyclerView.Adapter<SliderAdapter.ImageViewH
     private List<Slider> sliders;
     private final Context context;
     private final FirebaseStorage storage;
+    private final ProgressBar progressBar;
 
-    public SliderAdapter(Context context, List<Slider> sliders) {
+    public SliderAdapter(Context context, List<Slider> sliders, ProgressBar progressBar) {
         this.context = context;
         this.sliders = sliders;
+        this.progressBar = progressBar;
         this.storage = FirebaseStorage.getInstance();
     }
 
@@ -50,27 +50,28 @@ public class SliderAdapter extends RecyclerView.Adapter<SliderAdapter.ImageViewH
         String imageUrl = slider.getPath();
 
         if (imageUrl != null && !imageUrl.isEmpty()) {
+
             // Get a reference to the image from Firebase Storage
             StorageReference storageRef = storage.getReferenceFromUrl(imageUrl);
 
             // Get the download URL for the image
             storageRef.getDownloadUrl().addOnSuccessListener(uri -> {
                 Log.d("SliderAdapter", "Loading image from URL: " + uri.toString());
-                // Use Glide to load the image from the download URL
+                // Use Glide to load the image from the download URL with increased timeout
                 Glide.with(context)
                         .load(uri)
                         .apply(new RequestOptions()
-                                .placeholder(R.drawable.brand_background) // Optional placeholder
-                                .error(R.drawable.textfield_bg) // Optional error image
-                                .diskCacheStrategy(DiskCacheStrategy.ALL))
+                                .timeout(1000)) // Set timeout to 10 seconds
                         .into(holder.imageView);
+                // Hide progress bar when loading is complete
+                progressBar.setVisibility(ProgressBar.GONE);
             }).addOnFailureListener(exception -> {
                 Log.d("SliderAdapter", "Failed to get download URL: " + exception.getMessage());
-                Glide.with(context).load(R.drawable.banner_1).into(holder.imageView);
             });
         } else {
             Log.d("SliderAdapter", "Image URL is null or empty");
-            Glide.with(context).load(R.drawable.banner_1).into(holder.imageView);
+            // Hide progress bar if loading fails
+            progressBar.setVisibility(ProgressBar.GONE);
         }
     }
 
@@ -94,4 +95,3 @@ public class SliderAdapter extends RecyclerView.Adapter<SliderAdapter.ImageViewH
         }
     }
 }
-

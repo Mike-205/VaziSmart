@@ -1,7 +1,5 @@
 package models;
 
-import com.google.firebase.firestore.DocumentReference;
-
 public class Slider {
     private String path;
 
