@@ -61,7 +61,7 @@ public class SliderAdapter extends RecyclerView.Adapter<SliderAdapter.ImageViewH
                 Glide.with(context)
                         .load(uri)
                         .apply(new RequestOptions()
-                                .timeout(1000)) // Set timeout to 10 seconds
+                                .timeout(10000)) // Set timeout to 10 seconds
                         .into(holder.imageView);
                 // Hide progress bar when loading is complete
                 progressBar.setVisibility(ProgressBar.GONE);
