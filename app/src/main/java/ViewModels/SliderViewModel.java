@@ -9,11 +9,10 @@ import Repositories.SliderRepository;
 import models.Slider;
 
 public class SliderViewModel extends ViewModel {
-    private final SliderRepository sliderRepository;
     private final LiveData<List<Slider>> sliderLiveData;
 
     public SliderViewModel() {
-        sliderRepository = new SliderRepository();
+        SliderRepository sliderRepository = new SliderRepository();
         sliderLiveData = sliderRepository.getSliders();
     }
 
